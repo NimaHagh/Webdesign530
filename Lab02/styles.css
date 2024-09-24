@@ -1,0 +1,116 @@
+
+@keyframes scaleUp {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+
+img:hover {
+    animation: scaleUp 0.5s ease-in-out; 
+}
+
+h1::before {
+    content: "🧢 ";
+}
+
+/* Initially hide the image */
+.hidden-image {
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 100px;
+    z-index: 10; 
+}
+
+/* Show the image when hovering over the header */
+#header-section:hover .hidden-image {
+    display: block;
+}
+
+
+
+#header-section {
+    background-color: rgba(41, 38, 38, 0.7);
+    padding: 20px;
+    text-align: center;
+    font-family: "Permanent Marker", cursive;
+    font-weight: 400;
+    font-style: normal;
+
+
+}
+
+.footer-section {
+    background-color: rgba(41, 38, 38, 0.7);
+    padding: 20px;
+    text-align: center;
+    opacity: 0.5;
+    
+}
+
+.footer-section p {
+    font-size: 14px;
+    color: lightgray;
+}
+
+
+#characters {
+    overflow: auto;
+}
+
+#characters figure {
+    float: left;
+    width: 45%;
+    margin: 10px;
+    background-color: rgba(226, 216, 216, 0.445);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#characters img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+section {
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid #fdfcf5;
+}
+
+
+body {
+    background-image: url('forest-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+
+
+main {
+    background-color: rgba(0, 0, 0, 0.6);
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+a {
+    color: #FFD700;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
