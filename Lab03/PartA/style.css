@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    background-color: #d10808;
+    color: white;
+    padding: 10px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
+p {
+    font-size: 1.2rem;
+    margin: 15px 0;
+}
+
+footer {
+    background-color: #d10808;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.image-section img {
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    display: block;
+    margin: 0 auto;
+}
+
+main {
+    display: block;
+}
+
+.image-section, .info-section {
+    padding: 15px;
+}
+
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    header, footer {
+        padding: 10px;
+    }
+}
+
+
+@media (min-width: 481px) and (max-width: 768px) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .image-section img {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+}
+
+
+@media (min-width: 769px) and (max-width: 1279px) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .image-section img {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    p {
+        font-size: 1.4rem;
+    }
+}
+
+@media (min-width: 1280px) {
+    header {
+        padding: 40px;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        gap: 30px;
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    p {
+        font-size: 1.6rem;
+    }
+}
