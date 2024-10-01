@@ -1,7 +1,6 @@
 body {
     margin: 0;
     padding: 0;
-    line-height: 1.6;
 }
 
 header {
@@ -9,11 +8,8 @@ header {
     background-color: #d10808;
     color: white;
     padding: 10px;
-}
-
-h1 {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin: 0;
 }
 
@@ -47,21 +43,32 @@ main {
     display: block;
 }
 
-.image-section, .info-section {
+.image-section,
+.info-section {
     padding: 15px;
 }
 
+.headimg {
+    padding: 2px;
+    width: 10%;
+    color: white;
+}
 
 @media (max-width: 480px) {
     h1 {
         font-size: 2rem;
+        color: blueviolet;
     }
 
     p {
         font-size: 1rem;
     }
 
-    header, footer {
+    header {
+        padding: 10px;
+    }
+
+    footer {
         padding: 10px;
     }
 }
@@ -93,6 +100,7 @@ main {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 20px;
+        color: blueviolet;
     }
 
     .image-section img {
