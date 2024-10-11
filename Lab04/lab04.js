@@ -4,7 +4,10 @@ function displayBookmarks() {
         "http://youtube.com",
         "https://chess.com",
         "http://tmu.com",
-        "https://x.com"
+        "https://x.com",
+        "https://github.com",
+        "http://idk.com"
+
     ];
     const container = document.getElementById("thebookmarks");
 
@@ -63,7 +66,8 @@ function checkPalindromeList() {
         "It ain't over till it's over",
         "radar",
         "When you come to a fork in the road, take it",
-        "Marge lets Norah see Sharon’s telegram."
+        "Marge lets Norah see Sharon’s telegram.",
+        "kayak"
     ];
     const resultDiv = document.getElementById("palindromeResults");
 
