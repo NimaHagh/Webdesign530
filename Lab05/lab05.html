@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 05 - Nima Hagh Doust</title>
+    <link rel="icon" type="image/x-icon" href="favcon.png">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body style="background-color: #625b5b; color: #4a483d; font-family: Arial, sans-serif;">
+    <h1 style="text-align: center; color: #000000; font-family: 'Creepster', cursive;">🎃 Click on Each Problem to
+        Display 🎃</h1>
+
+    <div style="text-align: center;">
+        <button class="problem-btn" onclick="showSection('problem1')">Problem 1</button>
+        <button class="problem-btn" onclick="showSection('problem2')">Problem 2</button>
+        <button class="problem-btn" onclick="showSection('problem3')">Problem 3</button>
+    </div>
+
+    <div id="problem1" class="problem-section">
+        <h2>Fill out the form</h2>
+        <form>
+            <label for="username">First name:</label><br>
+            <input type="text" id="username" name="username"><br>
+            <label for="userlastname">Last name:</label><br>
+            <input type="text" id="userlastname" name="userlastname"><br>
+            <label for="address">Address:</label><br>
+            <input type="text" id="address" name="address"><br>
+            <label for="phone">Phone Number:</label><br>
+            <input type="text" id="phone" placeholder="(416) 555-5555" required><br><br>
+            <button type="button" onclick="checkinput()">Validate</button>
+        </form>
+        <div id="output" class="output"></div>
+    </div>
+
+    <div id="problem2" class="problem-section">
+        <h2>Start Typing</h2>
+        <label for="userText">Enter your text here:</label><br>
+        <textarea id="userText" rows="7" cols="49"></textarea>
+        <br>
+        <div>
+            <p>
+                <strong>Number of Total Characters:</strong> <span id="charCount">0</span>
+            </p>
+            <p>
+                <strong>Number of Letter Characters Only:</strong> <span id="letterCount">0</span>
+            </p>
+        </div>
+    </div>
+
+    <div id="problem3" class="problem-section">
+        <h2>Open the image</h2>
+        <div id="imageContainer" style="position: relative;">
+            <img id="expandableImage" src="problem3.webp" alt="Click to expand" style="cursor: pointer;">
+            <img id="closeIcon" src="close.png" alt="Close" 
+                 style="display: none; position: absolute; top: 10px; right: 10px; width: 30px; height: 30px; cursor: pointer;">
+        </div>
+    </div>
+    
+
+    <script>
+        function showSection(problemId) {
+            document.querySelectorAll('.problem-section').forEach(section => section.style.display = 'none');
+            document.getElementById(problemId).style.display = 'block';
+        }
+
+
+        function checkinput() {
+            const username = document.getElementById('username').value.trim();
+            const userlastname = document.getElementById('userlastname').value.trim();
+            const address = document.getElementById('address').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+
+            const nameChecker = /^[a-zA-Z\s]+$/;
+            if (!nameChecker.test(username) || !nameChecker.test(userlastname)) {
+                alert('Enter a valid first name and last name. Only letters (a-z, A-Z) are allowed.');
+                return;
+            }
+
+            const phoneChecker = /^\(\d{3}\) \d{3}-\d{4}$/;
+            if (!phoneChecker.test(phone)) {
+                alert('Enter a valid phone number like (416) 555-5555.');
+                return;
+            }
+
+            const updatedphone = phone.replace(/\((\d{3})\) (\d{3})-(\d{4})/, '$1-$2-$3');
+            displayOutput(username, userlastname, address, updatedphone);
+        }
+
+        function displayOutput(username, userlastname, address, phone) {
+            const outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = `
+                <h2 style="color: orange; font-family: 'Creepster', cursive;">🎃 Your Information 🎃</h2>
+                <p style="color: black; font-size: 1.3em;">
+                    <strong>👻 Full Name:</strong> ${username} ${userlastname} 
+                </p>
+                <p style="color: black; font-size: 1.3em;">
+                    <strong>🏠 Address:</strong> ${address} 
+                </p>
+                <p style="color: black; font-size: 1.3em;">
+                    <strong>☎️ Phone Number:</strong> ${phone} 
+                </p>
+            `;
+            outputDiv.style.fontSize = '1.5em';
+            outputDiv.style.marginTop = '20px';
+            outputDiv.style.backgroundColor = '#f4e1d2';
+            outputDiv.style.padding = '20px';
+            outputDiv.style.border = '3px solid orange';
+            outputDiv.style.borderRadius = '10px';
+            outputDiv.style.boxShadow = '0 0 10px #ff7518';
+        }
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const userText = document.getElementById('userText');
+            if (userText) {
+                userText.addEventListener('input', function () {
+                    const text = this.value;
+                    document.getElementById('charCount').innerText = text.length;
+                    const letterCount = (text.match(/[a-zA-Z]/g) || []).length;
+                    document.getElementById('letterCount').innerText = letterCount;
+                });
+            }
+        });
+
+
+        $(document).ready(function () {
+            $("#expandableImage").click(function () {
+                $(this).css("position", "relative").animate({
+                    width: "100%",
+                    height: "100vh"
+                }, 1000, function () {
+                    $("#closeIcon").show(); 
+                });
+            });
+
+            $("#closeIcon").click(function () {
+                $("#expandableImage").animate({
+                    width: "150px",
+                    height: "150px"
+                }, 1000, function () {
+                    $("#closeIcon").hide(); 
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

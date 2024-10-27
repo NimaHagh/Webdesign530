@@ -1,0 +1,37 @@
+.problem-btn {
+    background-color: #ff7518;
+    color: white;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px #d45a00;
+    transition: transform 0.2s ease;
+}
+
+.problem-btn:hover {
+    transform: scale(1.05);
+    background-color: #ff9000;
+}
+
+.problem-section {
+    display: none;
+    padding: 20px;
+    background-color: #f4e1d2;
+    border: 3px solid orange;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ff7518;
+    margin-top: 20px;
+}
+h2 {
+    color: orange;
+    font-family: 'Creepster', cursive; /* Make sure to load this font in your HTML if you haven't already */
+    font-size: 1.8em;
+    text-align: center;
+    margin-top: 20px;
+}
+p{
+    font-size: 1.3em;
+}
