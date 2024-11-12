@@ -1,0 +1,29 @@
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-size: 3em;
+}
+
+#greeting-container {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.greeting-text {
+    padding: 20px;
+    border: 5px solid white; 
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 10px;
+}
+
